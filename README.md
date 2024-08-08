@@ -1,5 +1,6 @@
 # accounting-lyly\  
-# To clone repository
+
+**To clone repository**
 
 git clone https://github.com/Sa-Sek/accounting-lyly.git\
 
