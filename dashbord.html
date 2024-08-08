@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+      .agent-01{
+        float: center;
+         width: 100%;
+      }
+     .btn{
+      margin-top: 5px;
+      margin-left: 20px;
+      margin-bottom: 10px;
+         padding: 0;
+         width: 200px;
+         overflow: hidden;
+         text-decoration: none;
+         list-style-type: none;
+     }
+     .btn-02{
+      color: rgb(0, 0, 0);
+      padding: 15px;
+         width: 100%;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center; 
+         text-decoration: none; 
+         list-style-type: none;
+         overflow: hidden;
+     }
+     .btn-02:hover{
+      font-size: 17px;
+      font-weight: bolder;
+      color: white;
+     }
+
+     .btn-02:hover{
+      background-color: #007bff;
+     }
+     .box{
+      
+      margin: auto;
+      width: 90%;
+     }
+
+    
+     .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Media queries */
+    @media (max-width: 768px) {
+      /* Styles for smaller screens */
+      .container {
+        padding: 0 20px;
+      }
+      /* Other adjustments */
+    }
+
+ </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Menu</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li ><a href="#">Dashboard</a></li>
+                      <li><a href="callcenter.html" style="font-weight: bold;" > <span style="margin-right: 8px;"><i class="fa-solid fa-signal"></i></span> Call Center</a></li>
+                      <li><a href=""style="font-weight: bold;"><span style="margin-right: 8px;"><i class="fa-regular fa-address-card"></i></span> Marketing</a></li>
+                      <li><a href=""style="font-weight: bold;"><span style="margin-right: 8px;"> <i class="fa-brands fa-telegram"></i></span> Telegram Benifit</a></li>
+                      <li><a href=""style="font-weight: bold;"><span style="margin-right: 8px;"> <i class="fa-solid fa-pen-nib"></i></span> Affilate Offline</a></li>
+                      <li><a href="#"style="font-weight: bold;"><span style="margin-right: 8px;"><i class="fa-brands fa-affiliatetheme"></i> </span> Affilate Agent</a></li>
+                      <li><a href="#"style="font-weight: bold;"><span style="margin-right: 8px;"> <i class="fa-solid fa-notes-medical"></i></span>Report</a></li>
+                      <li><a href="#"style="font-weight: bold;"><span style="margin-right: 8px;"> <i class="fa-solid fa-gear"></i></span>Settings</a></li>
+                  </ul>
+        </nav>
+        <div class="main-content">
+            <header class="topbar">
+                <h1>Dashboard</h1>
+                <div class="user-info">
+                    <p>Welcome, User</p>
+                    <a href="#">Logout</a>
+                </div>
+            </header>
+            <div class="content"></div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

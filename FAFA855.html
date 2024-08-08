@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z4G4fA7+7DXt659Q6S/ahlWXIC/0sdZfr0Aulow+6jQ97Knq6ppfzM94U0ZMRI1KGPG8y41t1YfG+V9IrI00GiOsd2uO+B0s3uE06B4RD1r9Z2ICB/iUdhAYlmhT8+GG2m080/x4RTuY0oV9lTh450t+4G76/s0c0/5xapC+0KUAFa+jhIAU9F9rGQ=="   
+ crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .agent-01{
+          float: center;
+           width: 100%;
+        }
+       .btn{
+        margin-top: 5px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+           padding: 0;
+           width: 200px;
+           overflow: hidden;
+           text-decoration: none;
+           list-style-type: none;
+       }
+       .btn-02{
+        color: rgb(0, 0, 0);
+        padding: 15px;
+           width: 100%;
+           height: 100%;
+           display: flex;
+           justify-content: center;
+           align-items: center; 
+           text-decoration: none; 
+           list-style-type: none;
+           overflow: hidden;
+       }
+       .btn-02:hover{
+        font-size: 17px;
+        font-weight: bolder;
+        color: white;
+       }
+  
+       .btn-02:hover{
+        background-color: #007bff;
+       }
+       .box{
+        
+        margin: auto;
+        width: 90%;
+       }
+  
+      
+  
+  
+   </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Menu</h2>
+            </div>
+            <ul class="sidebar-menu">
+              <li ><a href="#">Dashboard</a></li>
+                    <li><a href="callcenter.html" style="font-weight: bold;" > <span style="margin-right: 8px;"><i class="fa-solid fa-signal"></i></span> Call Center</a></li>
+                    <li><a href=""style="font-weight: bold;"><span style="margin-right: 8px;"><i class="fa-regular fa-address-card"></i></span> Marketing</a></li>
+                    <li><a href=""style="font-weight: bold;"><span style="margin-right: 8px;"> <i class="fa-brands fa-telegram"></i></span> Telegram Benifit</a></li>
+                    <li><a href=""style="font-weight: bold;"><span style="margin-right: 8px;"> <i class="fa-solid fa-pen-nib"></i></span> Affilate Offline</a></li>
+                    <li><a href="#"style="font-weight: bold;"><span style="margin-right: 8px;"><i class="fa-brands fa-affiliatetheme"></i> </span> Affilate Agent</a></li>
+                    <li><a href="#"style="font-weight: bold;"><span style="margin-right: 8px;"> <i class="fa-solid fa-notes-medical"></i></span>Report</a></li>
+                    <li><a href="#"style="font-weight: bold;"><span style="margin-right: 8px;"> <i class="fa-solid fa-gear"></i></span>Settings</a></li>
+                </ul>
+      </nav>
+        </nav>
+        <div class="main-content">
+            <header class="topbar">
+                <h3 style="font-weight: bold;">FAFA855</h3>
+                <div class="user-info">
+                    <p>Welcome, User</p>
+                    <a href="#">Logout</a>
+                </div>
+            </header>
+            <div class="content" style="padding-left: 5px;padding-right: 5px;">
+                <div class="inputdata">
+                    <form name="submit-to-google-sheet" onsubmit="return handleSubmit(event)"id="myForm">
+                        <div class="row">
+                          <div class="col-md-6 mb-6">
+                            <label for="name" class="form-label"style="margin: 0px;">NAME</label>
+                            <input type="text" class="form-control" id="name" name="Name" required>
+                          </div>
+                          <div class="col-md-6 mb-6">
+                            <label for="affilate" class="form-label"style="margin: 0px;">AFFILIATE</label>
+                            <input type="text" class="form-control" id="affilate" name="Affilate" required>
+                          </div>
+                          <div class="col-md-6 mb-6">
+                            <label for="winlose" class="form-label"style="margin: 0px;">TOTAL WIN / LOSS</label>
+                            <input type="text" class="form-control" id="winlose" name="Winlose" onchange="calculate()" value="$">
+                          </div>
+                          <div class="col-md-6 mb-6">
+                            <label for="promotion" class="form-label"style="margin: 0px;">TOTAL PROMOTION</label>
+                            <input type="text" class="form-control" id="promotion" name="Promotion" onchange="calculate()" value="$">
+                          </div>
+                          <div class="col-md-6 mb-6">
+                            <label for="result" class="form-label"style="margin: 0px;">RESULT</label>
+                            <input type="text" class="form-control" id="result" name="Result" readonly>
+                            <div class="col-md-6 mb-6">
+                              <label for="turnover" class="form-label"style="margin: 0px;">TURNOVER</label>
+                              <input type="text" class="form-control" id="turnover" name="Turnover" required>
+                            </div>
+                            <div class="col-md-6 mb-6">
+                              <label for="customer" class="form-label"style="margin: 0px;">NEW_CUSTOMER</label>
+                              <input type="text" class="form-control" id="customer" name="NewCustomer" required>
+                            </div>     
+                            <div class="col-md-6 mb-6">
+                              <label for="dp_no_play" class="form-label"style="margin: 0px;">DP_NO_PLAY</label>
+                              <input type="text" class="form-control" id="dp_no_play" name="DP_No_Play" required>
+                            </div>  
+                            <div class="col-md-6 mb-6">
+                              <label for="bonus" class="form-label"style="margin: 0px;">BONUS</label>
+                              <input type="text" class="form-control" id="bonus" name="Bonus" required>
+                            </div>                         
+                            <div class="col-md-6 mb-6">
+                            <label for="status" class="form-label"style="margin: 0px;">Status</label>
+                            <input type="text" class="form-control" id="status" name="Status" required>
+                          </div>
+                          <div class="col-md-6 mb-6">
+                            <label for="description" class="form-label"style="margin: 0px;">Description</label>
+                            <input type="text" class="form-control" id="description" name="Description" required>
+                          </div>
+                          <div class="col-md-12 mb-6" style="display: flex;margin-top: 5px;justify-content: center;align-items: center;margin-left:4px;">
+                            <a href="855.html" style="width:100%;height: 40px;border-radius: 5px;color: black;display: flex;align-items: center;padding-left: 10px;list-style-type: none;text-decoration: none;background-color: white; outline: 2px solid rgb(215, 215, 215);">Choose File</a>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="height:37px;">Submit</button>
+                      </form>
+                      </div>
+                    <div class="table01" style="background-color: #007bff;width: 100;">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault(); // Prevent default form submission
+  
+        // Simulate form submission (replace with actual submission logic)
+        // ...
+  
+        Swal.fire({
+          title: 'Success!',
+          text: 'Form submitted successfully.',
+          icon: 'success'
+        }).then(() => {
+          document.getElementById('myForm').reset();
+        });
+  
+        return false; // Prevent form resubmission
+      }
+    </script>
+    <script>
+      
+        function calculate() {
+          let winlose = parseFloat(document.getElementById("winlose").value.replace("$", ""));
+          let promotion = parseFloat(document.getElementById("promotion").value.replace("$", ""));
+          let result = winlose - promotion;
+          document.getElementById("result").value ="$"+ result.toFixed(2);
+        }
+      </script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzE6aeavuX033p5CJVKaHwziabkGE36Uo_MMZeciSto7A_rgp7gKKk_OLs4-ELmkgR2lQ/exec'; // Replace 'Your URL will be here' with the URL of your Google Apps Script
+      const form = document.forms['submit-to-google-sheet'];
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message));
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html> 
+

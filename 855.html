@@ -1,0 +1,47 @@
+<html lang="en">
+<title>FAFA118Service</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="icon/css/all.min.css">
+<link rel="stylesheet" href="style34.css">
+
+</head>
+<body>
+  <div class="menu">
+  </div>
+<div class="container text-center "><br><br>
+    <input type="file"accept="image/*" ><br><br>
+        <img src=" " alt="" style="width: 500px;height: 500px;background-repeat: no-repeat;background-size: cover;">
+        <div class="col-md-12 mb-6" style="display: flex;margin-top: 5px;justify-content: center;align-items: center;margin-left:4px;">
+            <a href="FAFA855.html" style="width:200px;height: 40px;border-radius: 5px;color: black;display: flex;align-items: center;justify-content: center;font-weight: bold;padding-left: 10px;list-style-type: none;text-decoration: none;background-color: white; outline: 2px solid rgb(215, 215, 215);"><span><i class="fa-solid fa-backward"></i></span> Back</a>
+          </div>
+</div>
+<script>
+    let url = "https://script.google.com/macros/s/AKfycbwHlp_N8xqbBuAfL3r0cXoBCM-60hvsFwRMZD8St50TIc6nTNMaoskds7c8RuGk58f9ZQ/exec";
+    let file = document.querySelector("input");
+    let img = document.querySelector("img");
+    file.addEventListener('change',()=>{
+        let fr = new FileReader();
+        fr.addEventListener('loadend',()=>{
+            let res = fr.result;
+            img.src=res;
+            let spt = res.split("base64,")[1];
+            let obj = {
+                base64:spt,
+                type:file.files[0].type,
+                name:file.files[0].name
+            }
+            fetch(url,{
+                method:"POST",
+                body:JSON.stringify(obj)
+            })
+            .then(r=>r.text())
+            .then(data=>console.log(data))
+ 
+        })
+        fr.readAsDataURL(file.files[0])
+    })
+</script>
+
+
+</body>
+</html>
